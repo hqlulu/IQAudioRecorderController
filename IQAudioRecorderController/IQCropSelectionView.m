@@ -31,6 +31,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+
+        bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds))];
+        bg.backgroundColor = [UIColor greenColor];
+        [self addSubview:bg];
         
         lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, CGRectGetHeight(self.bounds))];
         lineView.backgroundColor = [UIColor redColor];

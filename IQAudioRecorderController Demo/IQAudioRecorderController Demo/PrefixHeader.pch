@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  IQAudioRecorderController Demo
+//
+//  Created by hqlulu on 16/10/8.
+//  Copyright © 2016年 Iftekhar. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define Local(key, comment) NSLocalizedString(key, comment)
+
+#endif /* PrefixHeader_pch */

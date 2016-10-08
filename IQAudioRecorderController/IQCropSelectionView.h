@@ -29,6 +29,7 @@
     UIView *lineView;
     UIView *smallLineView;
     UILabel *timeLabel;
+    UIView *bg;
 }
 
 @property(nonatomic, assign) NSTimeInterval cropTime;

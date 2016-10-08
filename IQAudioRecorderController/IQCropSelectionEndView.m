@@ -42,6 +42,7 @@
     static CGFloat timeLabelheight = 20;
     
     lineView.frame =CGRectMake(CGRectGetMidX(self.bounds), timeLabelheight, CGRectGetWidth(lineView.frame), CGRectGetHeight(self.bounds)-timeLabelheight*2);
+    bg.frame = CGRectMake(CGRectGetMinX(self.bounds), timeLabelheight, CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)-timeLabelheight*2);
     
     smallLineView.frame =CGRectMake(CGRectGetMinX(self.bounds), timeLabelheight, CGRectGetWidth(self.bounds)/2, CGRectGetWidth(lineView.frame));
     

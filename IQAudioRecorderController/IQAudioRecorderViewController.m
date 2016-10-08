@@ -238,24 +238,36 @@
         //Recording controls
         _startRecordingButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"audio_record" inBundle:bundle compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(recordingButtonAction:)];
         _startRecordingButton.tintColor = [self _normalTintColor];
+        _startRecordingButton.accessibilityLabel = Local(@"Start Recording", nil);
+        
         _pauseRecordingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRecordingButtonAction:)];
         _pauseRecordingButton.tintColor = [UIColor redColor];
+        _pauseRecordingButton.accessibilityLabel = Local(@"Pause Recording", nil);
+
         _continueRecordingButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"audio_record" inBundle:bundle compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(continueRecordingButtonAction:)];
         _continueRecordingButton.tintColor = [UIColor redColor];
+        _continueRecordingButton.accessibilityLabel = Local(@"Continue Recording", nil);
+
         _stopRecordingButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"stop_recording" inBundle:bundle compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(stopRecordingButtonAction:)];
-        
         _stopRecordingButton.tintColor = [UIColor redColor];
+        _stopRecordingButton.accessibilityLabel = Local(@"Stop Recording", nil);
+
         _cancelRecordingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelRecordingAction:)];
         _cancelRecordingButton.tintColor = [self _highlightedTintColor];
+        _cancelRecordingButton.accessibilityLabel = Local(@"Cancel", nil);
         
         //Playing controls
         _stopPlayButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"stop_playing" inBundle:bundle compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(stopPlayingButtonAction:)];
         _stopPlayButton.tintColor = [self _normalTintColor];
+        _stopPlayButton.accessibilityLabel = Local(@"Stop Play", nil);
+
         _playButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAction:)];
         _playButton.tintColor = [self _normalTintColor];
+        _playButton.accessibilityLabel = Local(@"Play", nil);
 
         _pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pausePlayingAction:)];
         _pauseButton.tintColor = [self _normalTintColor];
+        _pauseButton.accessibilityLabel = Local(@"Pause", nil);
 
         //crop/delete control
         
@@ -269,6 +281,7 @@
         }
         
         _cropOrDeleteButton.tintColor = [self _normalTintColor];
+        _cropOrDeleteButton.accessibilityLabel = Local(@"Crop Or Delete", nil);
         
         [self setToolbarItems:@[_playButton,_flexItem, _startRecordingButton,_flexItem, _cropOrDeleteButton] animated:NO];
 
@@ -622,7 +635,7 @@
 {
     //UI Update
     {
-        [self setToolbarItems:@[_stopRecordingButton,_flexItem, _pauseRecordingButton,_flexItem, _cropOrDeleteButton] animated:YES];
+        [self setToolbarItems:@[_pauseRecordingButton,_flexItem, _stopRecordingButton,_flexItem, _cropOrDeleteButton] animated:YES];
         _cropOrDeleteButton.enabled = NO;
         [self.navigationItem setLeftBarButtonItem:_cancelRecordingButton animated:YES];
         _doneButton.enabled = NO;
